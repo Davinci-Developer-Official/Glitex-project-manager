@@ -37,6 +37,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 //Routes
+app.get('/', (req, res) => {
+    res.send('Hello world');
+});
 app.use('/api/v1/register', v1RegisterRoute);
 app.use('/api/v1/auth', v1AuthRoute);
 app.use('/api/v1/refresh', v1TokenRefreshRoute);
