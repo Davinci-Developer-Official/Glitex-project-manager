@@ -46,7 +46,7 @@ app.use('/api/v1/refresh', v1TokenRefreshRoute);
 app.use('/api/v1/logout', v1LogoutRoute);
 app.use('/api/v1/email', v1EmailRoute);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
