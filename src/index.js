@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const connectDB = require('../src/config/dbConn');
 const v1AuthRoute = require("./v1/routes/authRoute");
 const v1RegisterRoute = require("./v1/routes/registerRoute");
+const v1UserRoutes = require("./v1/routes/userRoutes");
 const v1TokenRefreshRoute = require("./v1/routes/refreshRoute");
 const v1LogoutRoute = require("./v1/routes/logoutRoute");
 const v1EmailRoute = require("./v1/routes/emailRoute");
@@ -41,6 +42,7 @@ app.get('/', (req, res) => {
     res.send('Hello world');
 });
 app.use('/api/v1/register', v1RegisterRoute);
+app.use('/api/v1/users', v1UserRoutes);
 app.use('/api/v1/auth', v1AuthRoute);
 app.use('/api/v1/refresh', v1TokenRefreshRoute);
 app.use('/api/v1/logout', v1LogoutRoute);

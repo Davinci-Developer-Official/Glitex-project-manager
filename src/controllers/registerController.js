@@ -1,13 +1,12 @@
 const User = require('../models/User');
 const VerificationToken = require('../models/VerificationToken');
 const bcrypt = require('bcrypt');
-const Joi = require('joi');
-const passwordComplexity = require("joi-password-complexity");
-const mailService = require("../utils/mail");
+const { validateRegisterUser } = require('../utils/validation');
+const {generateOTP, mailTransport} = require("../utils/mail");
 
 const registerNewUser = async (req, res) => {
     const { body } = req;
-    const { error } = validateUser(body);
+    const { error } = validateRegisterUser(body);
     //if valid, return 400 - Bad request
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -24,9 +23,10 @@ const registerNewUser = async (req, res) => {
             "username": body.name,
             "email": body.email,
             "password": hashedPwd,
+            "status": true
         });
 
-        OTP = mailService.generateOTP()
+        OTP = generateOTP()
 
         const verificationToken = new VerificationToken({
             owner: newUser._id,
@@ -37,7 +37,7 @@ const registerNewUser = async (req, res) => {
             await verificationToken.save();
             await newUser.save();
 
-            mailService.mailTransport().sendMail({
+            mailTransport().sendMail({
                 from: 'emailverification@email.com',
                 to: newUser.email,
                 subject: "Verify your email",
@@ -59,18 +59,6 @@ const registerNewUser = async (req, res) => {
     }
 }
 
-
-//Validation function 
-const validateUser = (user) => {
-    const schema = Joi.object({
-        name: Joi.string().required(),
-        email: Joi.string().required().email(),
-        password: passwordComplexity().required(),
-        passwordConfirmation: passwordComplexity().required().valid(Joi.ref('password')),
-    });
-
-    return schema.validate(user);
-}
 
 
 module.exports = { registerNewUser };

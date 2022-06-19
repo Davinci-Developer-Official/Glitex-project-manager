@@ -3,17 +3,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    username: {
-        type: String,
-        required: true
-    },
+    username: String,
     email: {
         type: String,
         required: true,
-        unique: true 
+        unique: true
     },
-    verified:{
-        type:Boolean,
+    verified: {
+        type: Boolean,
         required: true,
         default: false
     },
@@ -27,7 +24,12 @@ const userSchema = new Schema({
             default: 2000
         },
         Admin: Number,
-        SuperAdmin:Number
+        SuperAdmin: Number
+    },
+    status: {
+        type: Boolean,
+        required: true,
+        default: false
     },
     refreshToken: String,
     created_at: {

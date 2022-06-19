@@ -1,8 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const Joi = require('joi');
-const passwordComplexity = require("joi-password-complexity");
+const { validateUser } = require('../utils/validation');
 
 const handleLogin = async (req, res) => {
     const { body } = req;
@@ -12,7 +11,7 @@ const handleLogin = async (req, res) => {
 
     const foundUser = await User.findOne({ email: body.email }).exec();
     if (!foundUser) return res.sendStatus(401); //Unauthorized 
-    
+
     // evaluate password 
     const match = await bcrypt.compare(body.password, foundUser.password);
     if (match) {
@@ -50,14 +49,5 @@ const handleLogin = async (req, res) => {
     }
 }
 
-//Validation function 
-const validateUser = (user) => {
-    const schema = Joi.object({
-      email: Joi.string().required().email(),
-      password: passwordComplexity().required(),
-    });
-  
-    return schema.validate(user);
-}
 
 module.exports = { handleLogin };
