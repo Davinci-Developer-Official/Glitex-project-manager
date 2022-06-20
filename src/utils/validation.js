@@ -41,7 +41,7 @@ const validateUserId = (user) => {
 const validateRole = (role)=>{
     const schema = Joi.object({
         roleName: Joi.string().required(),
-        role: Joi.integer().required()
+        role: Joi.number().required()
     });
     return schema.validate(role);
 }

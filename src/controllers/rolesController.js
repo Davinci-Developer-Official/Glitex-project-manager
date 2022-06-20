@@ -45,11 +45,7 @@ const addRole = async (req, res) => {
 
 const updateRole = async (req, res) => {
     const { body } = req;
-
-    const { error } = validateRole(body);
-    //if valid, return 400 - Bad request
-    if (error) return res.status(400).send(error.details[0].message);
-
+    
     try {
         //update user status
         res.role.role = body.role;

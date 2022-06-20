@@ -80,10 +80,6 @@ const addUser = async (req, res) => {
 const updateUser = async (req, res) => {
     const { body } = req;
 
-    const { error } = validateUser(body);
-    //if valid, return 400 - Bad request
-    if (error) return res.status(400).send(error.details[0].message);
-
     try {
         //update user status
         res.user.status = body.status;
