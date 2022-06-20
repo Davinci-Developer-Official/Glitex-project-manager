@@ -11,7 +11,7 @@ const getRoleId = async (req, res, next) => {
         res.status(400).json("Parameter ':roleId' can not be empty");
     }
     try {
-        role = await role.findById(roleId);
+        role = await Role.findById(roleId);
         if (role === null) return res.status(404).json({ message: "This role is not available" })
     }
     catch (error) {

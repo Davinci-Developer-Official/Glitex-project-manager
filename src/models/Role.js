@@ -3,13 +3,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const roleSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
     role: {
-        User: {
-            type: Number,
-            default: 2000
-        },
-        Admin: Number,
-        SuperAdmin: Number
+       type: Number,
+       default: 2000,
+       required: true
     },
     created_at: {
         type: Date,

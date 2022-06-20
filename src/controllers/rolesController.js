@@ -3,9 +3,9 @@ const { validateRole } = require('../utils/validation');
 
 const getAllRoles = async (req, res) => {
     try {
-        //Get all users
+        //Get all roles
         const roles = await Role.find();
-        //Users not found
+        //Roles not found
         if (!roles) return res.status(204).json({ 'message': 'No users found' });
         res.status(200).json(roles);
     }
@@ -25,12 +25,13 @@ const addRole = async (req, res) => {
     if (error) return res.status(400).send(error.details[0].message);
 
     // check for duplicate usernames in the db
-    const duplicate = await User.findOne({ role: body.role }).exec();
+    const duplicate = await Role.findOne({ role: body.role }).exec();
     if (duplicate) return res.sendStatus(409); //Conflict 
 
     try {
         //create and store the new user
         const newRole = new Role({
+            "name": body.roleName,
             "role": body.role,
         });
 

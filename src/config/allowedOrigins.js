@@ -1,5 +1,5 @@
 const allowedOrigins = [
-    'https://www.yoursite.com',
+    'https://document-manager.netlify.app',
     'http://localhost:3000'
 ];
 
