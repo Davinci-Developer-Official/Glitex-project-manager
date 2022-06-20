@@ -14,6 +14,7 @@ const v1UserRoutes = require("./v1/routes/userRoutes");
 const v1TokenRefreshRoute = require("./v1/routes/refreshRoute");
 const v1LogoutRoute = require("./v1/routes/logoutRoute");
 const v1EmailRoute = require("./v1/routes/emailRoute");
+const v1RoleRoutes = require("./v1/routes/roleRoutes");
 
 // Connect to MongoDB
 connectDB();
@@ -47,6 +48,7 @@ app.use('/api/v1/auth', v1AuthRoute);
 app.use('/api/v1/refresh', v1TokenRefreshRoute);
 app.use('/api/v1/logout', v1LogoutRoute);
 app.use('/api/v1/email', v1EmailRoute);
+app.use('/api/v1/roles', v1RoleRoutes);
 
 const PORT = process.env.PORT || 8080;
 

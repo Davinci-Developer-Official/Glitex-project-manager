@@ -21,13 +21,13 @@ const validateRegisterUser = (user) => {
     return schema.validate(user);
 }
 
-const validateOtp = (OTP) => {
+const validateOtp = (otpd) => {
     const schema = Joi.object({
         userId: Joi.string().required(),
         otp: Joi.string().required(),
     });
 
-    return schema.validate(OTP);
+    return schema.validate(otpd);
 }
 
 const validateUserId = (user) => {
@@ -38,9 +38,19 @@ const validateUserId = (user) => {
     return schema.validate(user);
 }
 
+const validateRole = (role)=>{
+    const schema = Joi.object({
+        role: Joi.object({
+            
+        })
+    });
+    return schema.validate(role);
+}
+
 module.exports = {
     validateUser,
     validateRegisterUser,
     validateOtp,
-    validateUserId 
+    validateUserId,
+    validateRole 
 }
