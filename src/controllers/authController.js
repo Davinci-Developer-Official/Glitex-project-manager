@@ -7,7 +7,7 @@ const handleLogin = async (req, res) => {
     const { body } = req;
     const { error } = validateUser(body);
     //if valid, return 400 - Bad request
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) return res.status(400).json(error.details[0].message);
 
     const foundUser = await User.findOne({ email: body.email }).exec();
     if (!foundUser) return res.sendStatus(401); //Unauthorized 
