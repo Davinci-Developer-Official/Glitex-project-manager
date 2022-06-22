@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const verificationTokenSchema = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'users',
         require: true
     },
     token: {

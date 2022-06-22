@@ -19,12 +19,8 @@ const userSchema = new Schema({
         required: true
     },
     roles: {
-        User: {
-            type: Number,
-            default: 2000
-        },
-        Admin: Number,
-        SuperAdmin: Number
+        type: Schema.Types.ObjectId,
+        ref: 'roles'
     },
     status: {
         type: Boolean,
