@@ -15,6 +15,8 @@ const v1TokenRefreshRoute = require("./v1/routes/refreshRoute");
 const v1LogoutRoute = require("./v1/routes/logoutRoute");
 const v1EmailRoute = require("./v1/routes/emailRoute");
 const v1RoleRoutes = require("./v1/routes/roleRoutes");
+const v1DocumentRoutes = require("./v1/routes/documentRoutes");
+const v1CommentRoutes =  require("./v1/routes/commentRoutes");
 
 // Connect to MongoDB
 connectDB();
@@ -38,6 +40,9 @@ app.use(express.json());
 //middleware for cookies
 app.use(cookieParser());
 
+//making documents stored accessible
+app.use("public/documents", express.static('public/documents'));
+
 //Routes
 app.get('/', (req, res) => {
     res.send('Hello world');
@@ -49,6 +54,8 @@ app.use('/api/v1/refresh', v1TokenRefreshRoute);
 app.use('/api/v1/logout', v1LogoutRoute);
 app.use('/api/v1/email', v1EmailRoute);
 app.use('/api/v1/roles', v1RoleRoutes);
+app.use('/api/v1/documents', v1DocumentRoutes);
+pp.use('/api/v1/comments', v1CommentRoutes);
 
 const PORT = process.env.PORT || 8080;
 

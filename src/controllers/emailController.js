@@ -7,22 +7,22 @@ const verifyEmail = async (req, res) => {
     const { body } = req;
     const { error } = validateOtp(body);
     //if invalid, return 400 - Bad request
-    if (error) return res.status(400).json(error.details[0].message);
+    if (error) return res.status(400).json({message: error.details[0].message});
 
     //Getting the user id 
     const foundUser = await User.findOne({ _id: body.userId }).exec();
-    if (!foundUser) return res.status(404).json('User does not exist!');
+    if (!foundUser) return res.status(404).json({message: 'User does not exist!'});
 
     //Check email verification status
-    if (foundUser.verified) return res.status(409).json("This account is already verified");
+    if (foundUser.verified) return res.status(409).json({message: "This account is already verified"});
 
     //Getting the token delivery from the input if it is matches with the user
     const token = await VerificationToken.findOne({ owner: foundUser._id }).exec();
-    if (!token) return res.status(404).json('Otp does not exist!');;
+    if (!token) return res.status(404).json({message: 'Otp does not exist!'});;
 
     //Comparing the token delivered with one in the database
     const isMatched = await token.compareToken(body.otp);
-    if (!isMatched) return res.status(400).json("Please provide a valid token");
+    if (!isMatched) return res.status(400).json({message: "Please provide a valid token"});
 
     /*
         if all goes well we update the email verication status
@@ -42,10 +42,10 @@ const verifyEmail = async (req, res) => {
             html: "Email verified successful"
         });
 
-        res.status(200).json({ 'success': 'Email has been verified' });
+        return res.status(200).json({ success: 'Email has been verified' });
     }
     catch (error) {
-        res.status(500).json({ 'message': error.message });
+        return res.status(500).json({ message: error.message });
     }
 }
 
@@ -57,10 +57,10 @@ const resendToken = async (req, res) => {
 
     //Getting the user id 
     const foundUser = await User.findOne({ _id: body.userId }).exec();
-    if (!foundUser) return res.status(404).json('User does not exist!');
+    if (!foundUser) return res.status(404).json({message: 'User does not exist!'});
 
     //Check email verification status
-    if (foundUser.verified) return res.status(409).json("This account is already verified");
+    if (foundUser.verified) return res.status(409).json({message: "This account is already verified"});
 
     //Getting the token delivery from the input if it is matches with the user
     const token = await VerificationToken.findOne({ owner: foundUser._id }).exec();
@@ -88,7 +88,7 @@ const resendToken = async (req, res) => {
             res.status(200).json({ 'success': 'OTP has been reset successfully' });
         }
         catch (error) {
-            res.status(500).json({ 'message': error.message });
+            res.status(500).json({ message: error.message });
         }
     }
     else {
@@ -112,7 +112,7 @@ const resendToken = async (req, res) => {
             console.log(verificationToken);
         }
         catch (error) {
-            res.status(500).json({ 'message': error.message });
+            res.status(500).json({ message: error.message });
         }
     }
 }

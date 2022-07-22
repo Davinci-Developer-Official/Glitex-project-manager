@@ -5,12 +5,12 @@ const Schema = mongoose.Schema;
 const roleSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     role: {
-       type: Number,
-       default: 2000,
-       required: true
+        type: Number,
+        require: true
     },
     created_at: {
         type: Date,

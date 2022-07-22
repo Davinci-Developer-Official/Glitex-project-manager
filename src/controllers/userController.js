@@ -9,16 +9,16 @@ const getAllUsers = async (req, res) => {
         //Get all users
         const users = await User.find();
         //Users not found
-        if (!users) return res.status(204).json({ 'message': 'No users found' });
-        res.status(200).json(users);
+        if (!users) return res.status(204).json({ message: 'No users found' });
+        return res.status(200).json(users);
     }
     catch (error) {
-        res.status(500).json({ 'message': error.message });
+        return res.status(500).json({ message: error.message });
     }
 }
 
 const getUser = async (req, res) => {
-    res.status(200).json(res.user);
+    return res.status(200).json(res.user);
 }
 
 const addUser = async (req, res) => {
@@ -66,14 +66,16 @@ const addUser = async (req, res) => {
 
             console.log(verificationToken);
             console.log(newUser);
+
+            return res.status(201).json({ success: "User has been created successfully" });
         }
         catch (error) {
-            res.status(500).json({ 'message': error.message });
+            return res.status(500).json({ message: error.message });
         }
 
-        res.status(201).json({ 'user': newUser });
+        
     } catch (error) {
-        res.status(500).json({ 'message': error.message });
+        return res.status(500).json({ message: error.message });
     }
 }
 
@@ -86,10 +88,10 @@ const updateUser = async (req, res) => {
 
         //Update user status in db
         const updatedUser = await res.user.save();
-        res.status(200).json(updatedUser);
+        return res.status(200).json(updatedUser);
     }
     catch (error) {
-        res.status(500).json({ 'message': error.message });
+        return res.status(500).json({ message: error.message });
     }
 
 }

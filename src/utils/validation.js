@@ -46,10 +46,29 @@ const validateRole = (role)=>{
     return schema.validate(role);
 }
 
+const validateDocument = (document)=>{
+    const schema = Joi.object({
+        from: Joi.string().required(),
+        to: Joi.string().required(),
+    });
+    return schema.validate(document);
+}
+
+const validateComment = (comment)=>{
+    const schema = Joi.object({
+        from: Joi.string().required(),
+        to: Joi.string().required(),
+        message: Joi.string().required()
+    });
+    return schema.validate(comment);
+}
+
 module.exports = {
     validateUser,
     validateRegisterUser,
     validateOtp,
     validateUserId,
-    validateRole 
+    validateRole,
+    validateDocument,
+    validateComment 
 }

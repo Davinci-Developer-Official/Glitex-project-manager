@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    username: String,
+    username: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
@@ -18,7 +21,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    roles: {
+    role: {
         type: Schema.Types.ObjectId,
         ref: 'roles'
     },
