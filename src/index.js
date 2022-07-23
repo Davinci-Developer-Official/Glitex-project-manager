@@ -55,7 +55,7 @@ app.use('/api/v1/logout', v1LogoutRoute);
 app.use('/api/v1/email', v1EmailRoute);
 app.use('/api/v1/roles', v1RoleRoutes);
 app.use('/api/v1/documents', v1DocumentRoutes);
-pp.use('/api/v1/comments', v1CommentRoutes);
+app.use('/api/v1/comments', v1CommentRoutes);
 
 const PORT = process.env.PORT || 8080;
 
