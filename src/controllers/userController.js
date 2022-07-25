@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Role = require('../models/Role');
 const VerificationToken = require('../models/VerificationToken');
 const bcrypt = require('bcrypt');
 const { validateUser } = require('../utils/validation');
@@ -35,10 +36,14 @@ const addUser = async (req, res) => {
         //encrypt the password
         const hashedPwd = await bcrypt.hash(body.password, 10);
 
+        const userRole = await Role.findOne({name: body.role});
+
         //create and store the new user
         const newUser = new User({
-            "email": body.email,
-            "password": hashedPwd,
+            username: body.name,
+            email: body.email,
+            password: hashedPwd,
+            role: userRole._id
         });
 
         //Generate opt

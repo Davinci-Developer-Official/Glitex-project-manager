@@ -3,10 +3,12 @@ const passwordComplexity = require("joi-password-complexity");
 
 const validateUser = (user) => {
     const schema = Joi.object({
-      email: Joi.string().required().email(),
-      password: passwordComplexity().required(),
+        name: Joi.string().required(),
+        email: Joi.string().required().email(),
+        password: passwordComplexity().required(),
+        role: Joi.string().required()
     });
-  
+
     return schema.validate(user);
 }
 
@@ -38,7 +40,7 @@ const validateUserId = (user) => {
     return schema.validate(user);
 }
 
-const validateRole = (role)=>{
+const validateRole = (role) => {
     const schema = Joi.object({
         roleName: Joi.string().required(),
         role: Joi.number().required()
@@ -46,7 +48,7 @@ const validateRole = (role)=>{
     return schema.validate(role);
 }
 
-const validateDocument = (document)=>{
+const validateDocument = (document) => {
     const schema = Joi.object({
         from: Joi.string().required(),
         to: Joi.string().required(),
@@ -54,7 +56,7 @@ const validateDocument = (document)=>{
     return schema.validate(document);
 }
 
-const validateComment = (comment)=>{
+const validateComment = (comment) => {
     const schema = Joi.object({
         from: Joi.string().required(),
         to: Joi.string().required(),
@@ -70,5 +72,5 @@ module.exports = {
     validateUserId,
     validateRole,
     validateDocument,
-    validateComment 
+    validateComment
 }
