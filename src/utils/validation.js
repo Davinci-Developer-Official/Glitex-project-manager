@@ -3,10 +3,8 @@ const passwordComplexity = require("joi-password-complexity");
 
 const validateUser = (user) => {
     const schema = Joi.object({
-        name: Joi.string().required(),
         email: Joi.string().required().email(),
         password: passwordComplexity().required(),
-        role: Joi.string().required()
     });
 
     return schema.validate(user);

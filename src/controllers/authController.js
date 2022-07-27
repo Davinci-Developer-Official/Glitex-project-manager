@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Role = require('../models/Role');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { validateUser } = require('../utils/validation');
@@ -15,7 +16,8 @@ const handleLogin = async (req, res) => {
     // evaluate password 
     const match = await bcrypt.compare(body.password, foundUser.password);
     if (match) {
-        const roles = Object.values(foundUser.roles).filter(Boolean);
+
+        const roles = await Role.findOne({_id: match.role}).exec()
         // create JWTs
         const accessToken = jwt.sign(
             {
@@ -25,7 +27,7 @@ const handleLogin = async (req, res) => {
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '900s' }
+            { expiresIn: '1h' }
         );
         const refreshToken = jwt.sign(
             { "username": foundUser.username },
