@@ -1,0 +1,21 @@
+{
+    "uploadResponseToAdmin":{
+        "msg":"Thank you for uploading your project , you will get a response soon from the Adin(s)"
+    },
+    "notificationQuerryOnclick":{
+        "res":" Getting latest notification"
+    },
+    "sendFeedbackToUser":{
+        "feedback": "Thank you for your feedback"
+    },
+    "feedbackReceiveNotification":{
+        "feed": "you have recieve a message from admin"
+    },
+    "LoginReponse":{
+        "login":"Welcome back Glitex Member"
+    },
+    "RegisterAccount":{
+        "register":"Welcome to the Glitex solutions Team! "
+    }
+}
+

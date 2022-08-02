@@ -1,0 +1,755 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.head{
+  background-color:rgb(12, 12, 12) ;
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  align-items: center;
+  width:100%;
+  border-style:solid;
+  color: aliceblue;
+ 
+}
+
+.notification-box{
+  display: flexbox;
+  flex-direction: column;
+  right: 20%;
+  background-color: yellow;
+  height:fit-content;
+  width: 40%;
+  z-index: 3;
+  color: black;
+  position: absolute;
+  
+ 
+}
+
+.title{
+  letter-spacing: 0.4em;
+  position: relative;
+  text-align: center;
+  
+  
+  
+}
+.title:hover{
+  color:red ;
+  cursor:progress;
+}
+
+.single{
+  background-color: yellow;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  cursor: pointer;
+  align-items: center;
+  border: 2px;
+  border-style: solid;
+  height: 80px;
+  font-size:x-small;
+  padding-right: 5%;
+}
+.tit{
+  margin-top: 2px;
+  display: flexbox;
+  flex-direction: row;
+
+  padding-right:4% ;
+
+}
+.send{
+  margin-top: 2px;
+  
+}
+.date{
+  margin-top: 2px;
+  
+}
+
+.profile{
+  width: 70px;
+  background-color: rgb(32, 33, 34);
+  height: 70px;
+  padding: 20px;
+  border-radius: 70px;
+  background-image: url('../public/images/2022-07-09-081401.jpg');
+  background-size:cover;
+  border-color: rgb(11, 187, 236);
+  border-style: outset;
+  position: relative;
+  z-index: 2;
+ 
+
+}
+.profile-boxs{
+  height: 250px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  justify-content: space-evenly(10px);
+  margin-right: 100px;
+  right: 40px;
+  border-radius: 10%;
+  border-style: outset;
+  border: 2ch;
+  border-color: aqua;
+  
+}
+.exit{
+  position:relative;
+  margin-left:73%;
+  background-color:none;
+  cursor: pointer;
+  
+  
+}
+.ac{
+  display: inline-flex;
+  width: 196px;
+  background-color: yellow;
+  justify-content: space-around;
+  height: 50px;
+  padding-bottom: 2px;
+  z-index: 1;
+  align-items: center;
+  border-style: inset;
+  border-color: black;
+  
+  
+}
+.ac:hover{
+  background-color: white;
+}
+.up{
+  height: 220px;
+  background-image: url('../public/images/2022-07-09-081401.jpg');
+  background-size:cover;
+  cursor:progress;
+ 
+}
+.loginbtn {
+  background-color: black;
+  color: beige;
+  width: 60px;
+  border-radius:40%;
+  height: 40px;
+  border-style: outset;
+  
+}
+.loginbtn:hover{
+  background-color: yellow;
+  color: black;
+}
+.registerbtn{
+  background-color: black;
+  color: beige;
+  width: 60px;
+  border-radius:40%;
+  height: 40px;
+  border-style:outset ;
+}
+.registerbtn:hover{
+  background-color: yellow;
+  color: black;
+}
+.content{
+  color: aliceblue;
+
+}
+.content:hover{
+  color: red;
+  cursor: pointer;
+}
+.upbody{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  height: fit-content;
+  width: 80%;
+  margin-top: 5%;
+  margin-right:  10%  ;
+  margin-left: 10%;
+}
+.form-box{
+  height: 50%;
+  background-color:yellow;
+}
+.form{
+  margin: 0% 10% 5% 10%;
+  height: 100% ;
+  width: 80%;
+ 
+}
+.ul{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: .3em;
+  margin: 2%;
+}
+
+.resubmit{
+  margin-left: 20px;
+  margin-top: 5px;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  border:hidden;
+  color: white;
+  height:30px ;
+  border-radius: 10%;
+  display: flexbox;
+  padding: .5%;
+  position: absolute;
+  justify-content: space-evenly;
+}
+
+.submit{
+  margin-left: 86%;
+  color:white;
+  background-color:black;
+  border:hidden;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+  border-radius: 10%;
+}
+.leo-decap{
+  height: 48%;
+  
+  /*background-size:contain ;
+  background-image: url('./videos/Smiling Leo Perfect GIF.gif');*/
+}
+.leo-decap img{
+  width: 100%;
+  height: 100%;
+}
+
+.feedback{
+  height:1200px;
+  width:100%;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  border-style: solid;
+  border: 10%;
+}
+.fbox{
+  width: 100%;
+  background-color: white;
+  height: 40px;
+  margin-top: 3%;
+  color: black;
+  z-index: 6;
+}
+
+
+
+.side-menu{
+  height: fit-content;
+  background-color: rgb(0, 255, 229);
+  position: absolute;
+  width:20%;
+  cursor: pointer;
+  right: .2%;
+  z-index: 2;
+  border-top-left-radius: 4%;
+}
+.side-menu:hover{
+  background-color: brown;
+}
+.users{
+  display: flexbox;
+  flex-direction: column;
+  background-color: aqua;
+  align-items: center;
+}
+.categories{
+  background-color: blueviolet;
+}
+.cat1{
+  cursor:pointer;
+  width: 70%;
+  padding: 5%;
+  margin: 10%;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 30%;
+  border-style: outset;
+}
+.cat1:hover{
+  background-color: yellow;
+  color: black;
+}
+.cat2{
+  cursor: pointer;
+  width: 70%;
+  padding: 5%;
+  margin: 10%;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 30%;
+  border-style: outset;
+
+}
+.cat2:hover{
+  background-color: yellow;
+  color: black;
+}
+.cat3{
+  cursor:pointer;
+  width: 70%;
+  padding: 5%;
+  margin: 10%;
+  background-color: black;
+  color: aliceblue;
+  font-size: small;
+  border-radius: 20%;
+  border-style: outset;
+}
+.cat3:hover{
+  background-color: yellow;
+  color: black;
+}
+.cat4{
+  cursor:pointer;
+  width: 70%;
+  padding: 5%;
+  margin: 10%;
+  background-color: black;
+  color: aliceblue;
+  font-size: small;
+  border-radius: 30%;
+  border-style: outset;
+}
+.cat4:hover{
+  background-color: yellow;
+  color: black;
+}
+.cat5{
+  cursor:pointer;
+  width: 70%;
+  padding: 5%;
+  margin: 10%;
+  background-color: black;
+  color: aliceblue;
+  font-size: small;
+  border-radius: 30%;
+  border-style: outset;
+}
+.cat5:hover{
+  background-color: yellow;
+  color: black;
+}
+.admin{
+  display: flexbox;
+  flex-direction: column;
+  background-color: rgb(247, 0, 255);
+  align-items: center;
+}
+.Settings{
+  background-color: blueviolet;
+  height: 40px;
+ 
+}
+.set{
+  background-color: black;
+  color: aliceblue;
+  height: 80%;
+  
+}
+.content-index{
+  width:100%;
+  height:fit-content;
+  background-color:rgb(255, 255, 255);
+  top: 20%;
+ 
+  display: flexbox;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.article{
+  padding: 5%;
+  height: fit-content;
+  text-align:center;
+  background-color: yellow;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+.choices{
+  height: 450px;
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: yellow;
+  
+}
+a{
+  color:rgb(8, 46, 235);
+  
+}
+a:hover{
+  cursor: pointer;
+  color: rgb(249, 35, 2);
+}
+.Upl{
+  width: 40%;
+  height: 90%;
+  border-style: solid;
+  margin-left: 5%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  border: 2px;
+  flex-direction: column;
+}
+.fdg{
+  width: 40%;
+  border-style: inset;
+  margin-left: 10%;
+  height: 90%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px;
+
+}
+
+.uplb{
+  background-color: rgb(154, 174, 174);
+  width: 100%;
+  height: 25%;
+  z-index: 1;
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  padding-top: 20px;
+  justify-content: space-evenly;
+  position: relative;
+}
+.fbb{
+  background-color: rgb(154, 174, 174);
+  width: 90%;
+  height: 20%;
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  padding-top: 20px;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.uplb:hover{
+  color: blue;
+  cursor: pointer;
+  text-align: center;
+
+  background-color: black;
+}
+.fbb:hover{
+  color: blue;
+  cursor: pointer;
+  text-align: center;
+
+  background-color: black;
+}
+.dwbtn{
+  width: fit-content;
+ 
+  margin-left: 40%;
+ 
+  background-color: rgb(154, 174, 174);
+  border-style: inset;
+}
+.dwbtn:hover{
+  background-color: black;
+  color: red;
+  border-style: inset;
+}
+
+.uplbi{
+  height: 90%;
+  background-image: url('../public/images/vlcsnap-2022-06-29-14h24m21s666.png');
+  background-size: 100%;
+}
+.fe-img{
+  height: 80%;
+  background-image: url('../public/images/vlcsnap-2022-06-29-14h21m35s781.png');
+ background-size: 100%;
+}
+.Upl{
+  width: 40%;
+  border-style: solid;
+  margin-left: 5%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.footer{
+  background-color: black;
+  color: aliceblue;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  margin-top: 10%;
+  padding-top: 5%;
+}
+.login{
+  display: flex;
+  flex-direction: column;
+  margin: 5% 20% 20% 20%;
+  height: fit-content;
+  color: white;
+ 
+  background-color: black;
+}
+.login-form{
+  color: white;
+  display: flex;
+  
+  height: 60%;
+  background-color:yellow;
+}
+.form-login{
+  display: flex;
+  flex-direction: column;
+  padding: 0% 20% 20%;
+  width: 80%;
+  
+}
+.lf{
+  text-align: center;
+  letter-spacing: .3em;
+  padding: 5%;
+  display: flex;
+  color: black;
+  
+  flex-direction: column;
+}
+.lb{
+  margin: 2px;
+  border-radius: 0%;
+  border-style: hidden;
+  height: 25px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-color: rgb(253, 251, 251);
+  width: 99%;
+}
+.ls{
+  width: 70px;
+  margin: 20px;
+  color: yellow;
+  background-color: black;
+ 
+}
+.lp{
+  display: flex;
+  flex-direction: row;
+  
+}
+.eye{
+  padding: 3%;
+}
+.outsorce{
+  height: 8%;
+  background-color:red ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+  margin-top: .2%;
+  text-align: center;
+}
+.outsorce:hover{
+  background-color: black;
+}
+.icons-info{
+  color: rgb(222, 216, 216);
+  padding: 10%;
+  height: 100%;
+  width: 100%;
+  cursor:pointer;
+
+}
+.icons-info:hover {
+  color:rgb(54, 54, 163);
+}
+.lw{
+  color: yellow;
+  padding: .5%;
+  letter-spacing: .3em;
+}
+
+.link{
+  color: black;
+ padding-top: 1%;
+}
+.wlback{
+  height: 30%;
+}
+.wlback img{
+  width: 100%;
+  height: fit-content;
+}
+.register{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  background-color: black;
+  margin: 5%;
+}
+.reg-box{
+  height: 60%;
+  background-color: yellow;
+}
+.reg-form{
+  display: flex;
+  flex-direction: column;
+  
+  height: 80%;
+  padding: 0% 20% 20% ;
+}
+.lr{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5%;
+}
+.ib{
+  width: 80%;
+  margin: 1% 10% 0% 10%;
+  background-color: rgb(255, 246, 246);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  letter-spacing: .3em;
+}
+.lrp{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+.show{
+ margin: 3% 1% 2% 5%;
+ padding-right: 1px;
+ left: 2%;
+ margin-left: 2%;
+ cursor: pointer;
+
+}
+.welcome{
+  height: 22%;
+}
+.welcome img{
+  width: 100%;
+  height: fit-content;
+}
+
+/*.feed-background{
+  background-color: black;
+  height: 1000px;
+  margin-top: 2%;
+  
+}*/
+
+.profile-page{
+  height: fit-content;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 10%;
+  margin-top:   10%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
+
+.background img{
+  height: 25%;
+  width: 100%;
+  
+}
+
+.pict img{
+  height: 150px;
+  width: 150px;
+  margin-top: -90px;
+  margin-left: 2%;
+  z-index: 1;
+  border-style: outset;
+  border-color: yellow;
+  border-radius: 90%;
+  position: absolute;
+}
+.profile-content{
+  height: fit-content;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  background-color: black;
+}
+.profile-form{
+  padding-top:35px;
+  height: 80%;
+  color: yellow;
+  margin-top: 5%;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+ 
+}
+.pl{
+  display: flex;
+  padding-top: 7%;
+  font-size: small;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: .7em;
+}
+.pl input{
+  border: none;
+  height: 40px;
+  margin-top: 2%;
+  color: black;
+  text-align: center;
+}
+.save-changes{
+  background-color: yellow;
+  padding: 3%;
+  margin-top: 10%;
+  margin-left: 60%;
+  border-radius: 9%;
+  
+}
+.go-back{
+  background-color: red;
+  margin-bottom: 5%;
+  color: white;
+  padding: 3%;
+  margin-right: 20%;
+  border-radius: 9%;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "glitex_project_manager_server",
+  "version": "1.0.0",
+  "description": "server side for g;itex report manager",
+  "main": "./index.js",
+  "scripts": {
+    "Snot": "nodemon ./Apis/send.notification.js",
+    "rec": "nodemon ./Apis/recieve.feedback.js",
+    "reg":"nodemon ./Apis/register.js",
+    "Sfeed": "nodemon ./Apis/send.feedback.js",
+    "upload": "nodemon ./Apis/upload.data.js",
+    "lint-fix": "eslint --fix ./*.js"
+  },
+  "author": "Thomas Mithamo",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "concurrently": "^7.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "node": "^18.4.0",
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3",
+    "pg-promise": "^10.11.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}
